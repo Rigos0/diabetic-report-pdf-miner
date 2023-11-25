@@ -10,3 +10,7 @@ To use the Diabetic Report PDF Miner, you need to have Python installed on your 
 
 ```bash
 pip install pdfminer
+
+
+Example of pdf miner workflow of reading a PDF. 
+![image](https://github.com/Rigos0/diabetic-report-pdf-miner/assets/47658855/78d4c4c2-a674-4cb3-b10c-fa945ca303f7)
