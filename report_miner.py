@@ -1,5 +1,5 @@
 from pdfminer.high_level import extract_text, extract_pages
-from pdfminer.layout import LAParams, LTTextBox
+from pdfminer.layout import LAParams, LTTextBox, LTRect
 from pdfminer.layout import LTTextContainer
 from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfpage import PDFPage

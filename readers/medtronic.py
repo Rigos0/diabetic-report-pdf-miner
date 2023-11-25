@@ -1,9 +1,29 @@
-from diabetic_report_pdf_miner.report_miner import PDFReader
+from diabetic_report_pdf_miner.report_miner import *
 from diabetic_report_pdf_miner.labels import *
 from diabetic_report_pdf_miner.string_utils import *
 
-
 class Medtronic(PDFReader):
+
+    @staticmethod
+    def convert_pdf_to_image(pdf_path):
+        return convert_from_path(pdf_path)
+
+
+
+
+
+
+
+    def load_sensor_range_data(self):
+        page_index = 0
+        elements_list = self.extract_elements_from_nth_page(page_index)
+
+        for e in elements_list:
+            if not isinstance(e, LTTextContainer):
+                continue
+
+            print(e.get_text())
+
     def load_sp_ci_data(self):
         """
         Loads the two required values of prumerny sacharidovy pomer and citlivost na inzulin
