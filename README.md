@@ -10,6 +10,7 @@ To use the Diabetic Report PDF Miner, you need to have Python installed on your 
 
 ```bash
 pip install pdfminer
+```
 
 
 Example of pdf miner workflow of reading a PDF. 
