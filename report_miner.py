@@ -55,10 +55,6 @@ class PDFReader:
     def read_pdf(self):
         raise NotImplementedError("Subclass must implement this method")
 
-    def display_data(self):
-        print("Načtená data: ")
-        for popisek, hodnota in self.data.items():
-            print(f"{popisek}: {hodnota}")
 
     @staticmethod
     def skip_elements(elements_list: list, regex_pattern: str, n=1):
@@ -154,3 +150,12 @@ class PDFReader:
         float_as_str = extract_float_as_str(extracted_text)
 
         return float_as_str
+
+    def calculate_sp_ci(self):
+        """
+        Calculates SP and CI from already loaded CDDI
+        :return:
+        """
+        digits = 2
+        self.data[PRUMERNY_SACHAR_POMER] = round(SACHARIDOVA_KONSTANTA / float(self.data[CDDI]), digits)
+        self.data[PRUMERNA_CITLIVOST_INZULIN] = round(INZULIN_KONSTANTA / float(self.data[CDDI]), digits)
